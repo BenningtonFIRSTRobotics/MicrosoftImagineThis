@@ -1,8 +1,19 @@
+<!DOCTYPE html> 
 <html> 
+	<script src="https://code.angularjs.org/1.5.1/angular.min.js"></script> 
+	<script> 
+		var main = angular.module("mainApp", []); 
+		main.controller("mainCtrl", function ($scope) { 
+			$scope.TestVar = "Testing!"; 		
+		}); 
+	</script> 
 	<head>	
 		<title>MatchTracker Test</title> 
 	</head>
  	<body> 
-		<p>Welcome humans!</p>
+		<p>Welcome humans!</p> 
+		<div data-ng-app="mainApp" data-ng-controller="mainCtrl">
+			<input type="text" data-ng-model="TestVar" value="{{TestVar}}" />	
+		</div>
 	</body> 
 </html> 
