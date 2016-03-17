@@ -5,7 +5,7 @@
 		var main = angular.module("mainApp", []); 
 
 		main.controller("mainCtrl", function ($scope, $http) { 
-			$scope.UpdateSeasonInfo = function { 
+			$scope.UpdateSeasonInfo = function () { 
 				$http.get("https://frc-api.firstinspires.org/v2.0/2016", { 
 						'Accept' = "application/xml", 
 						'Authorization' = "Basic " + $scope.Auth;  
