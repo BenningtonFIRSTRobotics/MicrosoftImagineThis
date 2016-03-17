@@ -10,8 +10,8 @@
 					method: "GET", 
 					url: "https://frc-api.firstinspires.org/v2.0/"+$scope.Year, 
 					headers: { 
-						Accept = "application/xml", 
-						Authorization = "Basic " + $scope.Auth; 
+						'Accept' = "application/xml", 
+						'Authorization' = "Basic " + $scope.Auth; 
 					} 
 				}).then(function success(response) { 
 					$scope.Response = response.data; 
@@ -21,12 +21,6 @@
 			}; 
 				
 		}); 
-
-		function CallbackSeasonInfoSuccess (response) { 
-		} 
-		
-		function CallbackSeasonInfoFail (response) { 
-		} 
 	</script> 
 	<head>	
 		<title>MatchTracker Test</title> 
