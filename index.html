@@ -1,5 +1,5 @@
 <!DOCTYPE html> 
-<html> 
+<html data-ng-app="mainApp" data-ng-controller="mainCtrl"> 
 	<script src="https://code.angularjs.org/1.5.1/angular.min.js"></script> 
 	<script> 
 		var main = angular.module("mainApp", []); 
@@ -12,9 +12,7 @@
 	</head>
  	<body> 
 		<p>Welcome humans!</p> 
-		<div data-ng-app="mainApp" data-ng-controller="mainCtrl">
-			<input type="text" data-ng-model="TestVar" />	
-			<p>{{TestVar}}</p> 
-		</div>
+		<input type="text" data-ng-model="TestVar" />	
+		<p>{{TestVar}}</p> 
 	</body> 
 </html> 
