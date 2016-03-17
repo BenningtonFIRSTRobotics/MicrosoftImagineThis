@@ -6,13 +6,9 @@
 
 		main.controller("mainCtrl", function ($scope, $http) { 
 			$scope.UpdateSeasonInfo = function { 
-				$http({ 
-					method: "GET", 
-					url: "https://frc-api.firstinspires.org/v2.0/"+$scope.Year, 
-					headers: { 
+				$http.get("https://frc-api.firstinspires.org/v2.0/2016", { 
 						'Accept' = "application/xml", 
-						'Authorization' = "Basic " + $scope.Auth; 
-					} 
+						'Authorization' = "Basic " + $scope.Auth;  
 				}).then(function success(response) { 
 					$scope.Response = response.data; 
 				}, function fail(response) { 
