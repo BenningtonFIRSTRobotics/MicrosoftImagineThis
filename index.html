@@ -1,18 +1,41 @@
 <!DOCTYPE html> 
 <html data-ng-app="mainApp" data-ng-controller="mainCtrl"> 
-	<script src="https://code.angularjs.org/1.5.1/angular.min.js"></script> 
+	<script src="https://code.angularjs.org/1.5.1/angular.min.js" /> 
 	<script> 
 		var main = angular.module("mainApp", []); 
-		main.controller("mainCtrl", function ($scope) { 
-			$scope.TestVar = "Testing!"; 		
+
+		main.controller("mainCtrl", function ($scope, $http) { 
+			$scope.UpdateSeasonInfo = function { 
+				$http({ 
+					method: "GET", 
+					url: "https://frc-api.firstinspires.org/v2.0/"+$scope.Year, 
+					headers: { 
+						Accept = "application/xml", 
+						Authorization = "Basic " + $scope.Auth; 
+					} 
+				}).then(function success(response) { 
+					$scope.Response = response.data; 
+				}, function fail(response) { 
+					$scope.Response = response.status; 
+				}); 
+			}; 
+				
 		}); 
+
+		function CallbackSeasonInfoSuccess (response) { 
+		} 
+		
+		function CallbackSeasonInfoFail (response) { 
+		} 
 	</script> 
 	<head>	
 		<title>MatchTracker Test</title> 
 	</head>
  	<body> 
 		<p>Welcome humans!</p> 
-		<input type="text" data-ng-model="TestVar" />	
-		<p>{{TestVar}}</p> 
+		<input type="text" data-ng-model="Year" />
+		<input type="text" data-ng-model="Auth" /> 	
+		<p data-ng-bind="Response"></p>
+		<button type="button" data-ng-click="UpdateSeasonInfo()">Click Me!</button> 
 	</body> 
 </html> 
