@@ -53,12 +53,6 @@
 			background-color: #888888; 
 			transition: left 2s;
 		} 
-		#EnterYearPage { 
-			display: block;
-		} 
-		#ResultsPage { 
-			display: none; 
-		} 
 	</style> 
 	<head>	
 		<title>Game Season Information</title> 
@@ -67,12 +61,12 @@
 		<div id="MainTitleBar"> 
 			<h1>Game Season Information</h1> 		
 		</div> 
-		<div id="EnterYearPage" class="Page" data-ng-style="{left: YearPageShift}"> 
+		<div class="Page" data-ng-style="{left: YearPageShift}"> 
 			<h1>Enter Season:</h1> 
 			<input type="text" data-ng-model="YearNum" /> 
 			<button type="button" data-ng-click="UpdateSeasonInfo()">Go!</button> 
 		</div> 
-		<div id="ResultsPage" class="Page" data-ng-style="{left: ResultsPageShift}"> 
+		<div class="Page" data-ng-style="{left: ResultsPageShift}"> 
 			<h1>Game Name: </h1><p data-ng-bind="gameName"></p> 
 			<h1>Kickoff Date: </h1><p data-ng-bind="kickoff"></p> 
 			<h1>Number of Events: </h1><p data-ng-bind="eventCount"></p> 
