@@ -9,11 +9,11 @@
 			$scope.ResultsPageShift = "100%";  
 			$scope.UpdateSeasonInfo = function () { 
 				$http.get("getSeasonInfo.php?Year="+$scope.YearNum).then(function success(response) {  
-					if (typeof(response.Data) == "string") { 
+					if (typeof(response.Data) == "string") { // TODO: This check doesn't work. Gots to fix. :( 
 						alert("Year must be between 2015 and current season."); 
 					} 
 					else { 					
-						$scope.gameName = response.data[0]; 
+						$scope.gameName = response.data["gameName"]; 
 						$scope.kickoff = response.data["kickoff"]; 
 						$scope.eventCount = response.data["eventCount"]; 
 						$scope.teamCount = response.data["teamCount"]; 
