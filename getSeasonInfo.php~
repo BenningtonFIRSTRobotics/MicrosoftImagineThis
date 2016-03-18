@@ -1,0 +1,11 @@
+<?php 
+	$cl = curl_init(); 
+	curl_setopt($cl, CURLOPT_URL, "https://frc-api.firstinspires.org/v2.0/".$_GET["Year"]);
+	curl_setopt($cl, CURLOPT_USERPWD, "titaniumbadgers:C94E6366-F5C1-4311-88BD-04EEC40D55E6"); 
+	curl_setopt($cl, CURLOPT_HTTPGET, 1); 
+	curl_setopt($cl, CURLOPT_RETURNTRANSFER, 1);  
+	curl_setopt($cl, CURLOPT_SSL_VERIFYPEER, 0);	
+
+	echo curl_exec($cl); 
+	curl_close($cl); 
+?> 
