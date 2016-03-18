@@ -13,7 +13,7 @@
 						alert("Year must be between 2015 and current season."); 
 					} 
 					else { 					
-						$scope.gameName = response.data["gameName"]; 
+						$scope.gameName = response.data[0]; 
 						$scope.kickoff = response.data["kickoff"]; 
 						$scope.eventCount = response.data["eventCount"]; 
 						$scope.teamCount = response.data["teamCount"]; 
