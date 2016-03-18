@@ -9,7 +9,7 @@
 			$scope.ResultsPageShift = "100%";  
 			$scope.UpdateSeasonInfo = function () { 
 				$http.get("getSeasonInfo.php?Year="+$scope.YearNum).then(function success(response) {  
-					if (response.Data.indexOf("currently") > -1) { 
+					if (typeof(response.Data) == "string") { 
 						alert("Year must be between 2015 and current season."); 
 					} 
 					else { 					
