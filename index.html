@@ -21,9 +21,6 @@
 		}); 
 	</script> 
 	<style> 
-		body { 
-			background-color: #888888; 
-		} 
 		#MainTitleBar { 
 			position: fixed; 
 			width: 100%; 
@@ -36,6 +33,21 @@
 			text-align: center; 
 			font-size: 47px; 
 			margin-top: 0;
+		} 	
+		.Page { 
+			width: 100%; 
+			height: 93%; 
+			position: fixed; 
+			bottom: 0; 
+			left: 0; 
+			background-color: #888888; 
+			transition: left 2s;
+		} 
+		#EnterYearPage { 
+			display: block;
+		} 
+		#ResultsPage { 
+			display: none; 
 		} 
 	</style> 
 	<head>	
@@ -45,12 +57,12 @@
 		<div id="MainTitleBar"> 
 			<h1>Game Season Information</h1> 		
 		</div> 
-		<div id="EnterYearPage"> 
+		<div id="EnterYearPage" class="Page"> 
 			<h1>Enter Season:</h1> 
 			<input type="text" data-ng-model="Year" /> 
 			<button type="button" data-ng-click="UpdateSeasonInfo()">Go!</button> 
 		</div> 
-		<div id="ResultsPage"> 
+		<div id="ResultsPage" class="Page"> 
 			<p data-ng-bind="Response"></p>
 		</div> 		
 	</body> 
