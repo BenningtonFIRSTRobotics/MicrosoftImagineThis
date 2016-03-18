@@ -7,7 +7,7 @@
 		main.controller("mainCtrl", function ($scope, $http) { 
 			$scope.UpdateSeasonInfo = function () { 
 				$http.get("getSeasonInfo.php?Year="+$scope.Year).then(function success(response) {  
-					if (typeof(response) != "object") { 
+					if (!response.Data["eventCount"]) { 
 						$scope.Response = "Year must be between 2015 and current season."; 
 					} 
 					else { 					
