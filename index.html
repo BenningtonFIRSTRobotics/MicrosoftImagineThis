@@ -7,8 +7,8 @@
 		main.controller("mainCtrl", function ($scope, $http) { 
 			$scope.UpdateSeasonInfo = function () { 
 				$http.get("getSeasonInfo.php").then(function success(response) { 
-					var array = JSON.parse(response.data); 
-					$scope.Response = array["eventCount"];
+					//var array = JSON.parse(response.data); 
+					//$scope.Response = array["eventCount"];
 				}, function fail(response) { 
 					$scope.Response = response.status; 
 				}); 
