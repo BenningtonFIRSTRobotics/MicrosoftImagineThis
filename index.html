@@ -8,7 +8,7 @@
 			$scope.YearPageShift = "0"; 
 			$scope.ResultsPageShift = "100%";  
 			$scope.UpdateSeasonInfo = function () { 
-				$http.get("getSeasonInfo.php?Year="+$scope.Year).then(function success(response) {  
+				$http.get("getSeasonInfo.php?Year="+$scope.YearNum).then(function success(response) {  
 					if (typeof(response.Data) == "undefined") { 
 						alert("Year must be between 2015 and current season."); 
 					} 
@@ -69,7 +69,7 @@
 		</div> 
 		<div id="EnterYearPage" class="Page" data-ng-style="{left: YearPageShift}"> 
 			<h1>Enter Season:</h1> 
-			<input type="text" data-ng-model="Year" /> 
+			<input type="text" data-ng-model="YearNum" /> 
 			<button type="button" data-ng-click="UpdateSeasonInfo()">Go!</button> 
 		</div> 
 		<div id="ResultsPage" class="Page" data-ng-style="{left: ResultsPageShift}"> 
