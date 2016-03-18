@@ -9,7 +9,7 @@
 				$http.get("getSeasonInfo.php?Year="+$scope.Year).then(function success(response) {  
 					$scope.Response = response.data["eventCount"];
 				}, function fail(response) { 
-					$scope.Response = response.status; 
+					$scope.Response = "Fail."
 				}); 
 			}; 
 				
